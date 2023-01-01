@@ -8,9 +8,10 @@ import { AccessAlarm, SafetyCheckRounded, ThreeDRotation } from '@mui/icons-mate
 
 import SaveIcon from '@mui/icons-material/Save';
 import DeleteIcon from '@mui/icons-material/Delete';
-import CheckBox   from '@mui/icons-material/CheckBox';
 import React from 'react';
+import CheckBox from '@mui/material/Checkbox';
 import { FormControlLabel } from '@mui/material';
+import TextField from '@mui/material/TextField';
 
 function MycheckBox(){
   // const checked = false;
@@ -20,24 +21,30 @@ function MycheckBox(){
     <FormControlLabel 
     control={
       <CheckBox
-        icon={<DeleteIcon />}
+        icon={ <DeleteIcon /> }
+        checkedIcon = { <SaveIcon /> }
         checked = {checked}
         onChange={(e) => setChecked(e.target.checked) }
         inputProps={{ 'arial-label' : 'controlled'}}
       />
   }
-    label = "Checked"
+    label = "i am check"
     />
   )
 }
+
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <TextField
+        color="error"
+        />
+
         <MycheckBox />
 
-        <img src={logo} className="App-logo" alt="logo" /> 
-        <ButtonGroup>
+      <ButtonGroup>
         <Button 
             startIcon={ <SaveIcon /> }
             // endIcon={ <AddPhotoAlternateIcon />}
@@ -59,7 +66,8 @@ function App() {
             >
             Delete
         </Button>
-        </ButtonGroup>
+      </ButtonGroup>
+        <img src={logo} className="App-logo" alt="logo" /> 
       </header>
     </div>
   );
